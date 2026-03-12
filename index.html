@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SquadManager Pro — By Coaches for Coaches</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2E7D32;
+      --green-dark: #1B5E20;
+      --green-light:#4CAF50;
+      --white:      #ffffff;
+      --off-white:  #f5f7f5;
+      --text:       #1a1a1a;
+      --text-muted: #555;
+      --radius:     10px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: var(--green-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+    }
+    .nav-brand span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+    }
+    nav a.nav-link {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-dark);
+      padding: 60px 32px 50px;
+      text-align: center;
+    }
+    .hero img.banner {
+      width: 100%;
+      max-width: 860px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    /* ── TAGLINE ── */
+    .tagline-section {
+      background: var(--green);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .tagline-section h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+    .tagline-section p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.92);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── DOWNLOAD ── */
+    .download-section {
+      background: var(--off-white);
+      padding: 56px 32px;
+      text-align: center;
+    }
+    .download-section h2 {
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .download-section .coming-soon-note {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .store-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: 2px solid #ccc;
+      background: #e0e0e0;
+      color: #888;
+      cursor: not-allowed;
+      opacity: 0.7;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      min-width: 220px;
+      position: relative;
+    }
+    .store-btn svg { flex-shrink: 0; }
+    .store-btn .btn-text { text-align: left; line-height: 1.2; }
+    .store-btn .btn-text small { display: block; font-size: 0.7rem; font-weight: 400; color: #999; }
+    .store-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--green);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── FEATURES ── */
+    .features-section {
+      padding: 56px 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features-section h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 36px;
+      font-weight: 700;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--off-white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      border-left: 4px solid var(--green);
+    }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--off-white);
+      padding: 56px 32px;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .contact-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 20px; }
+    .contact-section a.email-link {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .contact-section a.email-link:hover { background: var(--green-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px 32px;
+      font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: underline; }
+    footer a:hover { color: var(--white); }
+    footer .footer-links { margin-bottom: 8px; }
+    footer .footer-links a { margin: 0 12px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .hero { padding: 32px 16px 28px; }
+      .tagline-section, .download-section, .contact-section { padding: 40px 16px; }
+      .features-section { padding: 40px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/icon.png" alt="SquadManager Pro icon" />
+      <span>SquadManager Pro</span>
+    </a>
+    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="banner" src="images/banner.png" alt="SquadManager Pro" />
+  </section>
+
+  <!-- TAGLINE -->
+  <section class="tagline-section">
+    <h1>By Coaches for Coaches</h1>
+    <p>Squad Manager Pro is an all-inclusive app designed by coaches for coaches. It enables your club to manage its IP in the form of training sessions, drills, team rules, player profiles and comms between coaches and players/supporters.</p>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section">
+    <h2>Download the App</h2>
+    <p class="coming-soon-note">Coming soon to the App Store and Google Play</p>
+    <div class="store-buttons">
+
+      <span class="store-btn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#888"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="btn-text">
+          <small>Download on the</small>
+          App Store
+        </span>
+        <span class="store-badge">Coming Soon</span>
+      </span>
+
+      <span class="store-btn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#888"><path d="M3.18 23.76c.3.17.64.22.99.14l12.49-7.18-2.79-2.79-10.69 9.83zM.54 1.1C.2 1.46 0 2.02 0 2.73v18.54c0 .71.2 1.27.54 1.63l.08.08 10.38-10.38v-.24L.62 1.02l-.08.08zM20.12 10.5l-2.67-1.54-3.12 3.12 3.12 3.12 2.69-1.55c.77-.44.77-1.16-.02-1.61v-.54zM4.17.24L16.66 7.42l-2.79 2.79L3.18.38C3.48.21 3.87.18 4.17.24z"/></svg>
+        <span class="btn-text">
+          <small>Get it on</small>
+          Google Play
+        </span>
+        <span class="store-badge">Coming Soon</span>
+      </span>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <h2>Everything Your Club Needs</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🏃</div>
+        <h3>Player Profiles</h3>
+        <p>Comprehensive player records including skills, positions, attendance and performance history.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📋</div>
+        <h3>Drill Library</h3>
+        <p>Build and share your club's drill library with diagrams, instructions and visibility controls.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Training Sessions</h3>
+        <p>Plan and schedule training sessions, assign drills and track attendance with ease.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚽</div>
+        <h3>Match Management</h3>
+        <p>Record match lineups, events and results to build a complete history for your squad.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">👥</div>
+        <h3>Squad Management</h3>
+        <p>Manage multiple squads, invite coaches and link supporters to their players via secure invites.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Role-Based Access</h3>
+        <p>Club admins, coaches, players and supporters each have the right level of access — no more, no less.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Have a question, need support, or want to learn more? We'd love to hear from you.</p>
+    <a href="mailto:info@bworthyintelligence.com" class="email-link">info@bworthyintelligence.com</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:info@bworthyintelligence.com">Contact</a>
+    </div>
+    &copy; 2026 B.Worthy Intelligence Pty Ltd. All rights reserved.
+  </footer>
+
+</body>
+</html>
