@@ -156,7 +156,9 @@
     .coach-block p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
 
     /* ── SCREENSHOTS ── */
-    .shots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; margin-top: 34px; }
+    .shots-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
+    @media (min-width: 900px) { .shots-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+    @media (max-width: 540px) { .shots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     .shot { text-align: center; }
     .shot figcaption { margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--green-dark); }
 
@@ -230,7 +232,7 @@
     <div class="inner">
       <div>
         <h1>The assistant coach in your pocket</h1>
-        <p class="sub">SquadManager Pro brings professional coaching to community club volunteers at a fraction of the price. Plan sessions in minutes, set up real development pathways for your MiniRoos and juniors, and run match day like you've done it for years.</p>
+        <p class="sub">SquadManager Pro brings professional coaching to community club volunteers at a fraction of the price. Plan sessions in minutes, set up real development pathways for your MiniRoos and juniors, and run match day like you've been coaching for years.</p>
         <div class="store-buttons">
           <a href="https://apps.apple.com/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -241,7 +243,7 @@
             <span class="btn-text"><small>Get it on</small>Google Play</span>
           </a>
         </div>
-        <p class="free-note">Free to start. Set up your squad in five minutes.</p>
+        <p class="free-note">Free to start. Set up your squad in minutes.</p>
       </div>
       <div class="shot-frame">
         <img src="images/screenshots/session-plan-web.png" alt="An AI-built session plan showing the session objective, timed activities and coaching tweaks" />
@@ -252,7 +254,7 @@
   <!-- NEW TO COACHING -->
   <section class="band-off">
     <div class="inner">
-      <h2>Never coached before? You're exactly who this was built for.</h2>
+      <h2>Never coached before? You're in the right place.</h2>
       <p class="lead">Most community coaches are parents who put their hand up. Putting your hand up shouldn't mean working out a whole season on your own, so the app starts you three steps ahead:</p>
       <div class="beats">
         <div class="beat">
@@ -283,19 +285,19 @@
       <div class="coach-blocks">
         <div class="coach-block">
           <h3>Get serious about player development</h3>
-          <p>A proper development pathway for every age band, from first-season MiniRoos to competitive juniors: what to teach, when to teach it, and the drills to teach it with. Watch each topic move from introduced to secure as the season unfolds.</p>
+          <p>A proper development pathway for every age band, from first-season MiniRoos to competitive juniors: what to teach, when to teach it, and the drills to teach it with. Watch each topic go from first introduced to second nature as the season unfolds.</p>
         </div>
         <div class="coach-block">
           <h3>Session plans in minutes, not evenings</h3>
-          <p>Pick what you want to work on and your assistant coach builds the full session: warm-up to finisher, timings, coaching points and diagrams. It reads your pathway, your playing philosophy and your recent notes, then plans what this squad needs next.</p>
+          <p>Pick what you want to work on and your assistant coach builds the full session: warm-up to cool-down, timings, coaching points and diagrams. Not sure what to work on? Let the app recommend a focus, based on your playing philosophy, your development pathway and your recent training and match notes.</p>
         </div>
         <div class="coach-block">
           <h3>Match day, handled</h3>
-          <p>Fixtures import themselves from league platforms like Dribl. Line-ups take seconds, with fair minutes visible at a glance. Record goals, assists and subs live while parents follow from anywhere.</p>
+          <p>Fixtures import themselves from league platforms like Dribl. Line-ups take seconds, with everyone's game time visible at a glance. Record goals, assists and subs as they happen: the stats that matter to your team keep themselves, and parents follow along live from anywhere.</p>
         </div>
         <div class="coach-block">
           <h3>A season worth talking about</h3>
-          <p>Match talks in your team's own voice, post-match analysis that reads your notes rather than just the score, and at season's end a presentation night speech kit: a season story plus a speakable paragraph for every player.</p>
+          <p>Pre-game talks in your team's own voice. Post-match analysis that reads your notes, not just the scoreline. And when the season wraps up, a presentation night speech kit: the story of your season, with a paragraph worth reading aloud for every single player.</p>
         </div>
       </div>
     </div>
@@ -304,7 +306,7 @@
   <!-- SCREENSHOTS -->
   <section class="band-off">
     <div class="inner">
-      <h2 style="text-align:center;">See it in action</h2>
+      <h2 style="text-align:center;">A look inside the app</h2>
       <div class="shots-grid">
         <figure class="shot">
           <div class="shot-frame"><img loading="lazy" src="images/screenshots/recommend-focus-area-web.png" alt="Recommended focus areas screen analysing recent matches and training" /></div>
@@ -337,8 +339,8 @@
   <!-- FREE TO PRO SEGUE -->
   <section>
     <div class="inner">
-      <h2>Start free. Stay free as long as you like.</h2>
-      <p class="lead">Everything above is the free app: full squad management, the curated drill library, your starter pathway and philosophy, live matches, and 10 free AI generations to experience your assistant coach properly. Going Pro doesn't unlock the app. It makes the app yours:</p>
+      <h2>Free gets you coaching. Pro makes it yours.</h2>
+      <p class="lead">Everything above is the free app: full squad management, the curated drill library, your starter pathway and philosophy, live matches, and 10 free AI generations to experience your assistant coach properly. Pro takes the ceiling off: the AI speaks in your squad's own voice, remembers every season you've coached, and is there every single week, not just when you've saved up a generation for it.</p>
       <div class="tiers">
         <div class="tier">
           <h3>Free</h3>
@@ -355,7 +357,7 @@
           <h3>Pro</h3>
           <p class="tier-tag">The same app, tuned to your squad</p>
           <ul>
-            <li>Unlimited planning, match talks and analysis</li>
+            <li>As many plans, match talks and analyses as your season calls for</li>
             <li>Your own playing philosophy driving every plan and talk, not a level default</li>
             <li>Full multi-season history for every player</li>
             <li>Development tracking suggestions after every session</li>
@@ -374,7 +376,8 @@
       <h2>For club administrators and technical directors</h2>
       <p class="body">Your club's coaching philosophy, methodology and development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives your club a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad and age group. Push training plans to any squad or the whole club, standardise your methodology from MiniRoos up, and when coaches change, your IP stays.</p>
       <p class="price-anchor">Club licences from $199 per year for a 10 coach club</p>
-      <p class="price-sub">Scaling with your number of coaches. Around $20 to $25 a coach, instead of $30 going it alone.</p>
+      <p class="price-sub">Scaling with your number of coaches, and including a club administrator or technical director licence alongside the coach seats. Around $20 to $25 a coach, instead of $30 going it alone.</p>
+      <p class="body" style="margin-top: 18px;">Licences are assigned centrally, so each coach opens the app to find their squad, their pathway and the club's methodology already waiting, no setup required of them.</p>
       <div class="clubs-cta-row">
         <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="btn-solid">Email us about a club licence</a>
         <a href="clubs/" class="btn-outline">Get the one-page summary for your committee</a>
@@ -388,14 +391,14 @@
     <div class="inner">
       <div class="kicker"><span>For parents and supporters</span></div>
       <h2>For the sideline you can't always be on</h2>
-      <p class="lead">Follow your child's matches live, see their development journey across the season, and never miss presentation night's highlights. Free for every parent, always.</p>
+      <p class="lead">Stay close to your child's football journey, no matter how busy life gets. Follow their matches live as they happen, see their development across the season, and catch every milestone, all tailored to your child, so you're in the loop even when you can't make it to the ground. Free for every parent, always.</p>
     </div>
   </section>
 
   <!-- DOWNLOAD CTA (doubles as the reserved demo video slot) -->
   <section class="cta-band band-off" id="download">
     <div class="inner">
-      <h2>Your next session is five minutes away</h2>
+      <h2>Your next session is minutes away</h2>
       <div class="store-buttons centered">
         <a href="https://apps.apple.com/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
