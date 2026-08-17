@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SquadManager Pro: The AI assistant coach for community football</title>
-  <meta name="description" content="SquadManager Pro plans your sessions, preps your match talks and tracks every player's development. Built for community football clubs. Free to start." />
+  <title>SquadManager Pro: Professional coaching for community football volunteers</title>
+  <meta name="description" content="The assistant coach in your pocket. Professional-grade session planning, development pathways and match day tools for community football volunteers, at a fraction of the price. Free to start." />
   <link rel="icon" type="image/png" href="images/icon.png" />
 
   <!-- Open Graph / social cards -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="SquadManager Pro: The AI assistant coach for community football" />
-  <meta property="og:description" content="It plans your sessions, preps your match talks and tracks every player's development. Built for community football clubs. Free to start." />
+  <meta property="og:title" content="SquadManager Pro: Professional coaching for community football volunteers" />
+  <meta property="og:description" content="The assistant coach in your pocket. Session planning, development pathways and match day tools for community clubs. Free to start." />
   <meta property="og:image" content="https://squadmanagerpro.bworthyintelligence.com/images/banner.png" />
   <meta property="og:url" content="https://squadmanagerpro.bworthyintelligence.com/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -80,8 +80,19 @@
     .band-off   { background: var(--off-white); }
     h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 14px; color: var(--green-dark); }
     .band-green h2, .band-dark h2 { color: var(--white); }
-    .lead { font-size: 1.02rem; line-height: 1.7; color: var(--text-muted); max-width: 680px; }
+    .lead { font-size: 1.02rem; line-height: 1.7; color: var(--text-muted); max-width: 720px; }
     .band-green .lead, .band-dark .lead { color: rgba(255,255,255,0.92); }
+
+    /* Persona kicker: uppercase label with a rule, so each audience knows
+       instantly which section is speaking to them. */
+    .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .kicker span {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--green-dark); white-space: nowrap;
+    }
+    .kicker::after { content: ''; flex: 1; height: 2px; background: var(--green-light); opacity: 0.4; border-radius: 2px; }
+    .band-green .kicker span, .band-dark .kicker span { color: rgba(255,255,255,0.85); }
+    .band-green .kicker::after, .band-dark .kicker::after { background: rgba(255,255,255,0.4); }
 
     .store-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
     .store-buttons.centered { justify-content: center; }
@@ -138,27 +149,18 @@
     .beat p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
     .free-banner { margin-top: 28px; text-align: center; font-size: 1.1rem; font-weight: 800; color: var(--green-dark); }
 
-    /* ── AHA BLOCKS ── */
-    .aha .inner { display: grid; grid-template-columns: 1fr; gap: 8px; }
-    .aha ul { list-style: none; margin-top: 18px; display: grid; gap: 14px; max-width: 720px; }
-    .aha li { padding-left: 30px; position: relative; font-size: 0.98rem; line-height: 1.65; }
-    .aha li::before { content: '✓'; position: absolute; left: 0; top: 0; font-weight: 800; color: var(--green-light); }
-    .aha li strong { font-weight: 700; }
-    .aha.band-dark li::before { color: #A5D6A7; }
-    .aha.band-dark li, .aha.band-green li { color: rgba(255,255,255,0.92); }
-    .aha p.body { max-width: 760px; font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin-top: 6px; }
-    .aha.band-dark p.body { color: rgba(255,255,255,0.9); }
+    /* ── COACH BLOCKS ── */
+    .coach-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 10px; }
+    .coach-block { background: var(--off-white); border-radius: var(--radius); padding: 28px 26px; border-left: 4px solid var(--green); }
+    .coach-block h3 { font-size: 1.1rem; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+    .coach-block p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
 
     /* ── SCREENSHOTS ── */
     .shots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; margin-top: 34px; }
     .shot { text-align: center; }
     .shot figcaption { margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--green-dark); }
 
-    /* ── CTA BAND (video slot placeholder) ── */
-    .cta-band { text-align: center; }
-    .cta-band h2 { margin-bottom: 22px; }
-
-    /* ── FREE VS PRO ── */
+    /* ── FREE / PRO ── */
     .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
     .tier { background: var(--white); border-radius: var(--radius); padding: 30px 26px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
     .tier.pro { border: 2px solid var(--green); }
@@ -185,10 +187,11 @@
     a.btn-outline:hover { background: rgba(255,255,255,0.12); }
     .price-anchor { font-size: 1.25rem; font-weight: 800; color: var(--white); margin: 18px 0 6px; }
     .price-sub { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+    .band-green p.body, .band-dark p.body { font-size: 0.98rem; line-height: 1.7; color: rgba(255,255,255,0.92); max-width: 760px; }
 
-    /* ── SUPPORTERS ── */
-    .supporters { text-align: center; }
-    .supporters .lead { margin: 0 auto; }
+    /* ── CTA BAND ── */
+    .cta-band { text-align: center; }
+    .cta-band h2 { margin-bottom: 22px; }
 
     /* ── CONTACT / FOOTER ── */
     .contact-section { text-align: center; }
@@ -226,8 +229,8 @@
   <section class="hero">
     <div class="inner">
       <div>
-        <h1>Run your team's coaching like the pros</h1>
-        <p class="sub">SquadManager Pro is the AI assistant coach for community football. It plans your sessions, preps your match talks and tracks every player's development, built around how your squad actually plays.</p>
+        <h1>The assistant coach in your pocket</h1>
+        <p class="sub">SquadManager Pro brings professional coaching to community club volunteers at a fraction of the price. Plan sessions in minutes, set up real development pathways for your MiniRoos and juniors, and run match day like you've done it for years.</p>
         <div class="store-buttons">
           <a href="https://apps.apple.com/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -241,7 +244,7 @@
         <p class="free-note">Free to start. Set up your squad in five minutes.</p>
       </div>
       <div class="shot-frame">
-        <span class="placeholder-label">A full session plan,<br />built by AI<br />in 30 seconds</span>
+        <span class="placeholder-label">A full session plan,<br />built for your squad,<br />in 30 seconds</span>
       </div>
     </div>
   </section>
@@ -250,7 +253,7 @@
   <section class="band-off">
     <div class="inner">
       <h2>Never coached before? You're exactly who this was built for.</h2>
-      <p class="lead">Most community coaches are parents who put their hand up. SquadManager Pro turns that into a plan:</p>
+      <p class="lead">Most community coaches are parents who put their hand up. Putting your hand up shouldn't mean working out a whole season on your own, so the app starts you three steps ahead:</p>
       <div class="beats">
         <div class="beat">
           <span class="num">1</span>
@@ -264,46 +267,37 @@
         </div>
         <div class="beat">
           <span class="num">3</span>
-          <h3>Run sessions a parent can actually teach</h3>
-          <p>Over 100 free curated drills with step-by-step diagrams, clear coaching points and no jargon. The AI builds each session around your pathway, so you always know what to do on Tuesday night.</p>
+          <h3>Run sessions a parent can teach</h3>
+          <p>Nearly 100 free curated drills with step-by-step diagrams, clear coaching points and no jargon. Every session builds on your pathway, so you always know what to do on Tuesday night.</p>
         </div>
       </div>
       <p class="free-banner">All of that is free. Not a trial. Free.</p>
     </div>
   </section>
 
-  <!-- AHA A: AI ASSISTANT COACH -->
-  <section class="aha">
+  <!-- FOR COACHES -->
+  <section>
     <div class="inner">
-      <h2>An assistant coach who never misses training</h2>
-      <ul>
-        <li><strong>Session plans built for your squad, not templates.</strong> The AI reads your development pathway, your playing philosophy and your recent sessions, then plans what this squad needs next.</li>
-        <li><strong>Match talks in your team's voice.</strong> Pre-game team talks and individual briefings that use your own philosophy's language, ready to deliver from your phone.</li>
-        <li><strong>Post-match analysis that reads your notes, not just the score.</strong> What worked, what to train next, and how each player is tracking.</li>
-        <li><strong>A presentation night speech kit.</strong> At season's end, a season story plus a speakable paragraph for every player. Stand up, read it out, watch the room.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- AHA B: MATCH DAY -->
-  <section class="aha band-dark">
-    <div class="inner">
-      <h2>Match day, sorted</h2>
-      <ul>
-        <li><strong>Fixtures import themselves</strong> from league platforms like Dribl.</li>
-        <li><strong>Formations and line-ups in seconds</strong>, with fair minutes visible at a glance.</li>
-        <li><strong>Record the match live:</strong> goals, assists, subs and key moments, synced to the match clock.</li>
-        <li><strong>Parents follow live from anywhere</strong>, so nobody misses a goal because of a work trip.</li>
-        <li><strong>Stats and leaderboards</strong> across the season, and the seasons before it.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- AHA C: CLUB IP -->
-  <section class="aha">
-    <div class="inner">
-      <h2>Your club's coaching, owned by the club</h2>
-      <p class="body">Your club's coaching philosophy, methodology and development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives club admins a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad. Push training plans to any squad or the whole club, standardise your methodology from grassroots up, and when coaches change, your IP stays.</p>
+      <div class="kicker"><span>For coaches</span></div>
+      <h2>Everything a season asks of you, sorted</h2>
+      <div class="coach-blocks">
+        <div class="coach-block">
+          <h3>Get serious about player development</h3>
+          <p>A proper development pathway for every age band, from first-season MiniRoos to competitive juniors: what to teach, when to teach it, and the drills to teach it with. Watch each topic move from introduced to secure as the season unfolds.</p>
+        </div>
+        <div class="coach-block">
+          <h3>Session plans in minutes, not evenings</h3>
+          <p>Pick what you want to work on and your assistant coach builds the full session: warm-up to finisher, timings, coaching points and diagrams. It reads your pathway, your playing philosophy and your recent notes, then plans what this squad needs next.</p>
+        </div>
+        <div class="coach-block">
+          <h3>Match day, handled</h3>
+          <p>Fixtures import themselves from league platforms like Dribl. Line-ups take seconds, with fair minutes visible at a glance. Record goals, assists and subs live while parents follow from anywhere.</p>
+        </div>
+        <div class="coach-block">
+          <h3>A season worth talking about</h3>
+          <p>Match talks in your team's own voice, post-match analysis that reads your notes rather than just the score, and at season's end a presentation night speech kit: a season story plus a speakable paragraph for every player.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -313,7 +307,7 @@
       <h2 style="text-align:center;">See it in action</h2>
       <div class="shots-grid">
         <figure class="shot">
-          <div class="shot-frame"><span class="placeholder-label">AI session plan</span></div>
+          <div class="shot-frame"><span class="placeholder-label">Session plan</span></div>
           <figcaption>A full session plan in 30 seconds</figcaption>
         </figure>
         <figure class="shot">
@@ -340,8 +334,66 @@
     </div>
   </section>
 
-  <!-- VIDEO SLOT (renders as CTA band until the demo video exists) -->
-  <section class="cta-band" id="download">
+  <!-- FREE TO PRO SEGUE -->
+  <section>
+    <div class="inner">
+      <h2>Start free. Stay free as long as you like.</h2>
+      <p class="lead">Everything above is the free app: full squad management, the curated drill library, your starter pathway and philosophy, live matches, and enough assistant-coach planning each month to run real sessions. Going Pro doesn't unlock the app. It makes the app yours:</p>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <p class="tier-tag">A complete coaching kit for a real season</p>
+          <ul>
+            <li>Every squad management feature, unlimited players and fixtures</li>
+            <li>The full curated library: nearly 100 drills with original diagrams</li>
+            <li>A ready-made season pathway and playing philosophy</li>
+            <li>Live match recording, with the supporter live view</li>
+            <li>10 AI generations a month for session plans, talks and analysis</li>
+          </ul>
+        </div>
+        <div class="tier pro">
+          <h3>Pro</h3>
+          <p class="tier-tag">The same app, tuned to your squad</p>
+          <ul>
+            <li>Unlimited planning, match talks and analysis</li>
+            <li>Your own playing philosophy driving every plan and talk, not a level default</li>
+            <li>Full multi-season history for every player</li>
+            <li>Development tracking suggestions after every session</li>
+            <li>Premium drill packs</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tiers-note">Pro pricing is shown in the app. Coaching at a club? Club-wide licences below.</p>
+    </div>
+  </section>
+
+  <!-- FOR CLUBS -->
+  <section class="band-green" id="clubs">
+    <div class="inner">
+      <div class="kicker"><span>For clubs</span></div>
+      <h2>For club administrators and technical directors</h2>
+      <p class="body">Your club's coaching philosophy, methodology and development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives your club a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad and age group. Push training plans to any squad or the whole club, standardise your methodology from MiniRoos up, and when coaches change, your IP stays.</p>
+      <p class="price-anchor">Club licences from $199 per year for a 10 coach club</p>
+      <p class="price-sub">Scaling with your number of coaches. Around $20 to $25 a coach, instead of $30 going it alone.</p>
+      <div class="clubs-cta-row">
+        <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="btn-solid">Email us about a club licence</a>
+        <a href="clubs/" class="btn-outline">Get the one-page summary for your committee</a>
+      </div>
+      <p class="email-inline">Or email <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
+    </div>
+  </section>
+
+  <!-- FOR PARENTS & SUPPORTERS -->
+  <section>
+    <div class="inner">
+      <div class="kicker"><span>For parents and supporters</span></div>
+      <h2>For the sideline you can't always be on</h2>
+      <p class="lead">Follow your child's matches live, see their development journey across the season, and never miss presentation night's highlights. Free for every parent, always.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD CTA (doubles as the reserved demo video slot) -->
+  <section class="cta-band band-off" id="download">
     <div class="inner">
       <h2>Your next session is five minutes away</h2>
       <div class="store-buttons centered">
@@ -357,63 +409,8 @@
     </div>
   </section>
 
-  <!-- FREE VS PRO -->
-  <section class="band-off">
-    <div class="inner">
-      <h2 style="text-align:center;">Free is a complete coaching kit</h2>
-      <div class="tiers">
-        <div class="tier">
-          <h3>Free</h3>
-          <p class="tier-tag">Everything a new coach needs for a real season</p>
-          <ul>
-            <li>Every squad management feature, unlimited players and fixtures</li>
-            <li>The full curated library: 100+ drills with original diagrams</li>
-            <li>A ready-made season pathway and playing philosophy</li>
-            <li>Live match recording, with the supporter live view</li>
-            <li>10 AI generations a month to experience the assistant coach</li>
-          </ul>
-        </div>
-        <div class="tier pro">
-          <h3>Pro</h3>
-          <p class="tier-tag">Makes it personal</p>
-          <ul>
-            <li>Unlimited AI planning, match talks and analysis</li>
-            <li>Your own playing philosophy in the AI's voice, not a level default</li>
-            <li>Full multi-season history</li>
-            <li>AI development tracking suggestions</li>
-            <li>The pro drill library</li>
-          </ul>
-        </div>
-      </div>
-      <p class="tiers-note">Pro pricing is shown in the app. Club-wide licences below.</p>
-    </div>
-  </section>
-
-  <!-- FOR CLUBS -->
-  <section class="band-green" id="clubs">
-    <div class="inner">
-      <h2>For clubs: every coach equipped, your methodology retained</h2>
-      <p class="lead">Club licences include the Training Console: the shared drill library, club-wide training plan rollouts and the IP retention story above, for every coach at your club under one arrangement.</p>
-      <p class="price-anchor">From $199 per year for a 10 coach club</p>
-      <p class="price-sub">Scaling with your number of coaches. Around $20 to $25 a coach, instead of $30 going it alone.</p>
-      <div class="clubs-cta-row">
-        <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="btn-solid">Email us about a club licence</a>
-        <a href="clubs/" class="btn-outline">Get the one-page summary for your committee</a>
-      </div>
-      <p class="email-inline">Or email <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
-    </div>
-  </section>
-
-  <!-- SUPPORTERS -->
-  <section class="supporters">
-    <div class="inner">
-      <h2>For the sideline you can't always be on</h2>
-      <p class="lead">Follow your child's matches live, see their development journey, and never miss presentation night's highlights. Free for every parent, always.</p>
-    </div>
-  </section>
-
   <!-- CONTACT -->
-  <section class="band-off contact-section">
+  <section class="contact-section">
     <div class="inner">
       <h2>Get in touch</h2>
       <p class="lead" style="margin: 0 auto;">Have a question, need support, or want to learn more? We'd love to hear from you.</p>
