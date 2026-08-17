@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SquadManager Pro: Professional Squad Management for Community Clubs</title>
+  <title>SquadManager Pro: The AI assistant coach for community football</title>
+  <meta name="description" content="SquadManager Pro plans your sessions, preps your match talks and tracks every player's development. Built for community football clubs. Free to start." />
   <link rel="icon" type="image/png" href="images/icon.png" />
+
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SquadManager Pro: The AI assistant coach for community football" />
+  <meta property="og:description" content="It plans your sessions, preps your match talks and tracks every player's development. Built for community football clubs. Free to start." />
+  <meta property="og:image" content="https://squadmanagerpro.bworthyintelligence.com/images/banner.png" />
+  <meta property="og:url" content="https://squadmanagerpro.bworthyintelligence.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -39,31 +49,10 @@
       background: var(--green-dark);
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav-brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-    }
-    .nav-brand span {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-brand span { font-size: 1.05rem; font-weight: 700; color: var(--white); letter-spacing: 0.3px; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
     nav a.nav-link {
       color: rgba(255,255,255,0.85);
       text-decoration: none;
@@ -74,95 +63,36 @@
       transition: background 0.2s, color 0.2s;
       white-space: nowrap;
     }
-    nav a.nav-link:hover {
-      color: var(--white);
-      background: rgba(255,255,255,0.12);
-    }
+    nav a.nav-link:hover { color: var(--white); background: rgba(255,255,255,0.12); }
 
     @media (max-width: 620px) {
-      nav {
-        padding: 10px 16px;
-        justify-content: center;
-        gap: 0;
-      }
-      .nav-brand {
-        width: 100%;
-        justify-content: center;
-        padding-bottom: 8px;
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-        margin-bottom: 6px;
-      }
-      .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 2px;
-      }
-      nav a.nav-link {
-        font-size: 0.82rem;
-        padding: 5px 10px;
-      }
+      nav { padding: 10px 16px; justify-content: center; gap: 0; }
+      .nav-brand { width: 100%; justify-content: center; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 6px; }
+      .nav-links { width: 100%; justify-content: center; gap: 2px; }
+      nav a.nav-link { font-size: 0.82rem; padding: 5px 10px; }
     }
 
-/* ── TAGLINE ── */
-    .tagline-section {
-      background: var(--green);
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .tagline-section h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--white);
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
-    }
-    .tagline-section p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.92);
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
+    /* ── SHARED ── */
+    section { padding: 56px 32px; }
+    .inner { max-width: 1000px; margin: 0 auto; }
+    .band-green { background: var(--green); color: var(--white); }
+    .band-dark  { background: var(--green-dark); color: var(--white); }
+    .band-off   { background: var(--off-white); }
+    h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 14px; color: var(--green-dark); }
+    .band-green h2, .band-dark h2 { color: var(--white); }
+    .lead { font-size: 1.02rem; line-height: 1.7; color: var(--text-muted); max-width: 680px; }
+    .band-green .lead, .band-dark .lead { color: rgba(255,255,255,0.92); }
 
-    /* ── DOWNLOAD ── */
-    .download-section {
-      background: var(--off-white);
-      padding: 56px 32px;
-      text-align: center;
-    }
-    .download-section h2 {
-      font-size: 1.5rem;
-      color: var(--green-dark);
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-    .download-section .coming-soon-note {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-    }
-    .store-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+    .store-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+    .store-buttons.centered { justify-content: center; }
     .store-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 28px;
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 26px;
       border-radius: var(--radius);
       border: 2px solid #222;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      opacity: 1;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      min-width: 220px;
-      position: relative;
+      background: #111; color: #fff;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      min-width: 210px;
       transition: background 0.2s, border-color 0.2s;
     }
     .store-btn:hover { background: #333; border-color: #444; }
@@ -170,142 +100,111 @@
     .store-btn .btn-text { text-align: left; line-height: 1.2; }
     .store-btn .btn-text small { display: block; font-size: 0.7rem; font-weight: 400; color: rgba(255,255,255,0.7); }
 
-    /* ── FEATURES ── */
-    .features-section {
-      padding: 56px 32px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .features-section h2 {
-      text-align: center;
-      font-size: 1.5rem;
-      color: var(--green-dark);
-      margin-bottom: 36px;
-      font-weight: 700;
-    }
-    .feature-group { margin-bottom: 48px; }
-    .feature-group:last-child { margin-bottom: 0; }
-    .feature-group-heading {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .feature-group-heading h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--green-dark);
-      white-space: nowrap;
-    }
-    .feature-group-heading::after {
-      content: '';
-      flex: 1;
-      height: 2px;
-      background: var(--green-light);
-      opacity: 0.4;
-      border-radius: 2px;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-    .feature-card {
-      background: var(--off-white);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      border-left: 4px solid var(--green);
-    }
-    .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
-    .feature-card h3 { font-size: 1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
-    .feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-    .feature-card-hero {
-      background: var(--green-dark);
-      border-left: 4px solid var(--green-light);
-      margin-bottom: 24px;
-    }
-    .feature-card-hero h3 { color: var(--white); font-size: 1.15rem; }
-    .feature-card-hero p { color: rgba(255,255,255,0.88); font-size: 0.95rem; }
+    .email-inline { font-size: 0.92rem; margin-top: 14px; }
+    .email-inline a { color: inherit; font-weight: 600; }
 
-    /* ── CLUB LICENSING ── */
-    .licensing-section {
-      background: var(--green);
-      padding: 56px 32px;
-      text-align: center;
+    /* Phone frames: real screenshots drop into .shot-frame as <img>; until
+       then the frame carries its caption as designed placeholder content. */
+    .shot-frame {
+      aspect-ratio: 9 / 18;
+      border-radius: 22px;
+      border: 3px solid var(--green-dark);
+      background: linear-gradient(160deg, #e8f0e8 0%, #f5f7f5 55%, #dce8dc 100%);
+      display: flex; align-items: center; justify-content: center;
+      padding: 18px; text-align: center;
+      box-shadow: 0 10px 24px rgba(27,94,32,0.18);
+      overflow: hidden;
     }
-    .licensing-section h2 {
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-    .licensing-section p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.92);
-      max-width: 660px;
-      margin: 0 auto 28px;
-      line-height: 1.7;
-    }
-    .licensing-section a.email-link {
-      display: inline-block;
-      background: var(--white);
-      color: var(--green-dark);
-      padding: 14px 32px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: background 0.2s, color 0.2s;
-    }
-    .licensing-section a.email-link:hover {
-      background: var(--off-white);
+    .shot-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+    .shot-frame .placeholder-label { font-size: 0.85rem; font-weight: 700; color: var(--green-dark); opacity: 0.65; line-height: 1.5; }
+
+    /* ── HERO ── */
+    .hero { background: linear-gradient(165deg, var(--green-dark) 0%, var(--green) 70%); padding: 64px 32px; }
+    .hero .inner { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--white); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
+    .hero p.sub { font-size: clamp(1rem, 2vw, 1.18rem); color: rgba(255,255,255,0.92); line-height: 1.7; margin-bottom: 28px; }
+    .hero .free-note { margin-top: 14px; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+    .hero .shot-frame { max-width: 250px; margin: 0 auto; border-color: rgba(255,255,255,0.85); box-shadow: 0 14px 34px rgba(0,0,0,0.35); }
+    @media (max-width: 760px) {
+      .hero .inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero .shot-frame { max-width: 200px; }
     }
 
-    /* ── CONTACT ── */
-    .contact-section {
-      background: var(--off-white);
-      padding: 56px 32px;
-      text-align: center;
-    }
-    .contact-section h2 {
-      font-size: 1.5rem;
-      color: var(--green-dark);
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-    .contact-section p { font-size: 1rem; color: var(--text-muted); margin-bottom: 20px; }
-    .contact-section a.email-link {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .contact-section a.email-link:hover { background: var(--green-dark); }
+    /* ── NEW TO COACHING ── */
+    .beats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 32px; }
+    .beat { background: var(--white); border-radius: var(--radius); padding: 26px 24px; border-top: 4px solid var(--green); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .beat .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: var(--white); font-weight: 800; font-size: 0.95rem; margin-bottom: 12px; }
+    .beat h3 { font-size: 1.02rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .beat p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+    .free-banner { margin-top: 28px; text-align: center; font-size: 1.1rem; font-weight: 800; color: var(--green-dark); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--green-dark);
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 24px 32px;
-      font-size: 0.85rem;
+    /* ── AHA BLOCKS ── */
+    .aha .inner { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .aha ul { list-style: none; margin-top: 18px; display: grid; gap: 14px; max-width: 720px; }
+    .aha li { padding-left: 30px; position: relative; font-size: 0.98rem; line-height: 1.65; }
+    .aha li::before { content: '✓'; position: absolute; left: 0; top: 0; font-weight: 800; color: var(--green-light); }
+    .aha li strong { font-weight: 700; }
+    .aha.band-dark li::before { color: #A5D6A7; }
+    .aha.band-dark li, .aha.band-green li { color: rgba(255,255,255,0.92); }
+    .aha p.body { max-width: 760px; font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin-top: 6px; }
+    .aha.band-dark p.body { color: rgba(255,255,255,0.9); }
+
+    /* ── SCREENSHOTS ── */
+    .shots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; margin-top: 34px; }
+    .shot { text-align: center; }
+    .shot figcaption { margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--green-dark); }
+
+    /* ── CTA BAND (video slot placeholder) ── */
+    .cta-band { text-align: center; }
+    .cta-band h2 { margin-bottom: 22px; }
+
+    /* ── FREE VS PRO ── */
+    .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+    .tier { background: var(--white); border-radius: var(--radius); padding: 30px 26px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .tier.pro { border: 2px solid var(--green); }
+    .tier h3 { font-size: 1.15rem; font-weight: 800; color: var(--green-dark); margin-bottom: 4px; }
+    .tier .tier-tag { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
+    .tier ul { list-style: none; display: grid; gap: 10px; }
+    .tier li { padding-left: 26px; position: relative; font-size: 0.92rem; line-height: 1.55; color: var(--text); }
+    .tier li::before { content: '✓'; position: absolute; left: 0; font-weight: 800; color: var(--green-light); }
+    .tiers-note { margin-top: 18px; font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+
+    /* ── FOR CLUBS ── */
+    .clubs-cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 26px; }
+    a.btn-solid {
+      display: inline-block; background: var(--white); color: var(--green-dark);
+      padding: 14px 30px; border-radius: var(--radius); text-decoration: none;
+      font-weight: 700; font-size: 1rem; transition: background 0.2s;
     }
+    a.btn-solid:hover { background: var(--off-white); }
+    a.btn-outline {
+      display: inline-block; border: 2px solid rgba(255,255,255,0.8); color: var(--white);
+      padding: 12px 28px; border-radius: var(--radius); text-decoration: none;
+      font-weight: 700; font-size: 0.95rem; transition: background 0.2s;
+    }
+    a.btn-outline:hover { background: rgba(255,255,255,0.12); }
+    .price-anchor { font-size: 1.25rem; font-weight: 800; color: var(--white); margin: 18px 0 6px; }
+    .price-sub { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+
+    /* ── SUPPORTERS ── */
+    .supporters { text-align: center; }
+    .supporters .lead { margin: 0 auto; }
+
+    /* ── CONTACT / FOOTER ── */
+    .contact-section { text-align: center; }
+    .contact-section a.email-btn {
+      display: inline-block; background: var(--green); color: var(--white);
+      padding: 14px 32px; border-radius: var(--radius); text-decoration: none;
+      font-weight: 600; font-size: 1rem; transition: background 0.2s; margin-top: 16px;
+    }
+    .contact-section a.email-btn:hover { background: var(--green-dark); }
+    footer { background: var(--green-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px 32px; font-size: 0.85rem; }
     footer a { color: rgba(255,255,255,0.85); text-decoration: underline; }
     footer a:hover { color: var(--white); }
     footer .footer-links { margin-bottom: 8px; }
     footer .footer-links a { margin: 0 12px; }
 
-    @media (max-width: 600px) {
-      .tagline-section, .download-section, .contact-section, .licensing-section { padding: 40px 16px; }
-      .features-section { padding: 40px 16px; }
-    }
+    @media (max-width: 600px) { section { padding: 42px 16px; } .hero { padding: 48px 16px; } }
   </style>
 </head>
 <body>
@@ -318,149 +217,220 @@
     </a>
     <div class="nav-links">
       <a href="#download" class="nav-link">Download</a>
-      <a href="#licensing" class="nav-link">Club Licensing</a>
+      <a href="#clubs" class="nav-link">For Clubs</a>
       <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
     </div>
   </nav>
 
-<!-- TAGLINE -->
-  <section class="tagline-section">
-    <h1>Professional squad management for every community club</h1>
-    <p>Most clubs run on volunteers and passion. SquadManager Pro gives community football clubs the tools to manage training, matches and player development like a professional outfit, without the complexity or cost.</p>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features-section">
-    <h2>Everything Your Club Needs</h2>
-
-    <!-- Coaching -->
-    <div class="feature-group">
-      <div class="feature-group-heading"><h3>For Coaches</h3></div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">📋</div>
-          <h3>Drill Library &amp; Builder</h3>
-          <p>Create drills with an interactive pitch diagram builder, attach media and control visibility across your squads. Unlock premium drill packs to elevate your sessions.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner">
+      <div>
+        <h1>Run your team's coaching like the pros</h1>
+        <p class="sub">SquadManager Pro is the AI assistant coach for community football. It plans your sessions, preps your match talks and tracks every player's development, built around how your squad actually plays.</p>
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span class="btn-text"><small>Download on the</small>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.squadmanagerpro" target="_blank" rel="noopener" class="store-btn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M3.18 23.76c.3.17.64.22.99.14l12.49-7.18-2.79-2.79-10.69 9.83zM.54 1.1C.2 1.46 0 2.02 0 2.73v18.54c0 .71.2 1.27.54 1.63l.08.08 10.38-10.38v-.24L.62 1.02l-.08.08zM20.12 10.5l-2.67-1.54-3.12 3.12 3.12 3.12 2.69-1.55c.77-.44.77-1.16-.02-1.61v-.54zM4.17.24L16.66 7.42l-2.79 2.79L3.18.38C3.48.21 3.87.18 4.17.24z"/></svg>
+            <span class="btn-text"><small>Get it on</small>Google Play</span>
+          </a>
         </div>
-        <div class="feature-card">
-          <div class="icon">🏃</div>
-          <h3>Player Profiles</h3>
-          <p>Full player records with skills, positions, shirt numbers, attendance and performance history, giving you everything you need to track individual development.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">📅</div>
-          <h3>Training Sessions</h3>
-          <p>Plan and schedule sessions, assign drills from your library, and track player attendance, all in one place.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">⚽</div>
-          <h3>Match Management</h3>
-          <p>Sync your match schedule with popular league platforms such as Dribl, then set your formation &amp; line-up with an intuitive interface. Prepare pre-game tactics and post-game notes and communication to keep your squad aligned before, during and after every game.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🎙️</div>
-          <h3>Match Recording</h3>
-          <p>Record key match stats (e.g. goals, assists, saves, substitutions, etc.) in real time, synced to the match clock. Supporters can follow the action live, so parents never miss a moment, even when they can't be there.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">📊</div>
-          <h3>Squad Stats &amp; Leaderboards</h3>
-          <p>Track goals, assists, minutes played, attendance and more. Leaderboards keep players motivated and give coaches an instant performance snapshot.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">💬</div>
-          <h3>Team Communication</h3>
-          <p>Role-based access and secure invite codes ensure the right information reaches the right people: coaches, players and supporters.</p>
-        </div>
+        <p class="free-note">Free to start. Set up your squad in five minutes.</p>
       </div>
-    </div>
-
-    <!-- Club Management -->
-    <div class="feature-group">
-      <div class="feature-group-heading"><h3>For Club Admins</h3></div>
-      <div class="feature-card feature-card-hero">
-        <div class="icon">🖥️</div>
-        <h3>Training Console</h3>
-        <p>Your club's coaching philosophy, methodology and player development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives Club Admins a central command centre: a shared drill library, a structured training plan repository, and full visibility across every squad's sessions and matches. Push training plans to any squad or your entire club at once, standardise your coaching methodology from grassroots to senior level, and track player development with confidence. When coaches change, your IP stays.</p>
+      <div class="shot-frame">
+        <span class="placeholder-label">A full session plan,<br />built by AI<br />in 30 seconds</span>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">🔑</div>
-          <h3>Licensing &amp; User Management</h3>
-          <p>Grant access to individual users and assign them as Club Admins, Squad Coaches or Player Supporters under your club-wide licence, keeping your club's data secure and your team properly structured.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">👥</div>
-          <h3>Squad Access</h3>
-          <p>Step into any squad within your club and operate with the full suite of squad coach tools, ideal for providing hands-on support, reviewing how a squad is running or covering a session.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Supporters -->
-    <div class="feature-group">
-      <div class="feature-group-heading"><h3>For Supporters</h3></div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="icon">👨‍👩‍👧</div>
-          <h3>Supporter Access</h3>
-          <p>Stay close to your child's football journey, no matter how busy life gets. Follow their individual progress, view training sessions, match appearances and live match recordings, all tailored specifically to your child so you're always in the loop, even when you can't make it to the sideline.</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- DOWNLOAD -->
-  <section class="download-section" id="download">
-    <h2>Download the App</h2>
-    <p class="coming-soon-note">Available now on the App Store and Google Play</p>
-    <div class="store-buttons">
-
-      <a href="https://apps.apple.com/au/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <span class="btn-text">
-          <small>Download on the</small>
-          App Store
-        </span>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.squadmanagerpro" target="_blank" rel="noopener" class="store-btn">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M3.18 23.76c.3.17.64.22.99.14l12.49-7.18-2.79-2.79-10.69 9.83zM.54 1.1C.2 1.46 0 2.02 0 2.73v18.54c0 .71.2 1.27.54 1.63l.08.08 10.38-10.38v-.24L.62 1.02l-.08.08zM20.12 10.5l-2.67-1.54-3.12 3.12 3.12 3.12 2.69-1.55c.77-.44.77-1.16-.02-1.61v-.54zM4.17.24L16.66 7.42l-2.79 2.79L3.18.38C3.48.21 3.87.18 4.17.24z"/></svg>
-        <span class="btn-text">
-          <small>Get it on</small>
-          Google Play
-        </span>
-      </a>
-
     </div>
   </section>
 
-  <!-- CLUB LICENSING -->
-  <section class="licensing-section" id="licensing">
-    <h2>Club Licensing</h2>
-    <p>Managing multiple squads across your club? SquadManager Pro is available as a club-wide licence, giving every coach access to the full feature set under a single arrangement. With a shared drill library, club-level training plan rollouts and centralised oversight across all your squads and age groups.</p>
-    <p>Contact us to discuss a licensing arrangement tailored to suit your club.</p>
-    <a href="mailto:info@bworthyintelligence.com" class="email-link">Get in touch about club licensing</a>
+  <!-- NEW TO COACHING -->
+  <section class="band-off">
+    <div class="inner">
+      <h2>Never coached before? You're exactly who this was built for.</h2>
+      <p class="lead">Most community coaches are parents who put their hand up. SquadManager Pro turns that into a plan:</p>
+      <div class="beats">
+        <div class="beat">
+          <span class="num">1</span>
+          <h3>Tell it about your squad</h3>
+          <p>Age group and experience level. That's the whole setup.</p>
+        </div>
+        <div class="beat">
+          <span class="num">2</span>
+          <h3>Get a season pathway, ready made</h3>
+          <p>What to teach players at this level, in what order, with a playing philosophy to match. One tap and it's yours.</p>
+        </div>
+        <div class="beat">
+          <span class="num">3</span>
+          <h3>Run sessions a parent can actually teach</h3>
+          <p>Over 100 free curated drills with step-by-step diagrams, clear coaching points and no jargon. The AI builds each session around your pathway, so you always know what to do on Tuesday night.</p>
+        </div>
+      </div>
+      <p class="free-banner">All of that is free. Not a trial. Free.</p>
+    </div>
+  </section>
+
+  <!-- AHA A: AI ASSISTANT COACH -->
+  <section class="aha">
+    <div class="inner">
+      <h2>An assistant coach who never misses training</h2>
+      <ul>
+        <li><strong>Session plans built for your squad, not templates.</strong> The AI reads your development pathway, your playing philosophy and your recent sessions, then plans what this squad needs next.</li>
+        <li><strong>Match talks in your team's voice.</strong> Pre-game team talks and individual briefings that use your own philosophy's language, ready to deliver from your phone.</li>
+        <li><strong>Post-match analysis that reads your notes, not just the score.</strong> What worked, what to train next, and how each player is tracking.</li>
+        <li><strong>A presentation night speech kit.</strong> At season's end, a season story plus a speakable paragraph for every player. Stand up, read it out, watch the room.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AHA B: MATCH DAY -->
+  <section class="aha band-dark">
+    <div class="inner">
+      <h2>Match day, sorted</h2>
+      <ul>
+        <li><strong>Fixtures import themselves</strong> from league platforms like Dribl.</li>
+        <li><strong>Formations and line-ups in seconds</strong>, with fair minutes visible at a glance.</li>
+        <li><strong>Record the match live:</strong> goals, assists, subs and key moments, synced to the match clock.</li>
+        <li><strong>Parents follow live from anywhere</strong>, so nobody misses a goal because of a work trip.</li>
+        <li><strong>Stats and leaderboards</strong> across the season, and the seasons before it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AHA C: CLUB IP -->
+  <section class="aha">
+    <div class="inner">
+      <h2>Your club's coaching, owned by the club</h2>
+      <p class="body">Your club's coaching philosophy, methodology and development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives club admins a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad. Push training plans to any squad or the whole club, standardise your methodology from grassroots up, and when coaches change, your IP stays.</p>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="band-off">
+    <div class="inner">
+      <h2 style="text-align:center;">See it in action</h2>
+      <div class="shots-grid">
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">AI session plan</span></div>
+          <figcaption>A full session plan in 30 seconds</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">Drill diagram</span></div>
+          <figcaption>Drills a parent can teach</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">Development pathway</span></div>
+          <figcaption>Know what to teach all season</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">Live match</span></div>
+          <figcaption>Record the match as it happens</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">Season review</span></div>
+          <figcaption>Presentation night, written for you</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><span class="placeholder-label">Setup checklist</span></div>
+          <figcaption>From download to first session, guided</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SLOT (renders as CTA band until the demo video exists) -->
+  <section class="cta-band" id="download">
+    <div class="inner">
+      <h2>Your next session is five minutes away</h2>
+      <div class="store-buttons centered">
+        <a href="https://apps.apple.com/app/squadmanager-pro/id6761607447" target="_blank" rel="noopener" class="store-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="btn-text"><small>Download on the</small>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.squadmanagerpro" target="_blank" rel="noopener" class="store-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M3.18 23.76c.3.17.64.22.99.14l12.49-7.18-2.79-2.79-10.69 9.83zM.54 1.1C.2 1.46 0 2.02 0 2.73v18.54c0 .71.2 1.27.54 1.63l.08.08 10.38-10.38v-.24L.62 1.02l-.08.08zM20.12 10.5l-2.67-1.54-3.12 3.12 3.12 3.12 2.69-1.55c.77-.44.77-1.16-.02-1.61v-.54zM4.17.24L16.66 7.42l-2.79 2.79L3.18.38C3.48.21 3.87.18 4.17.24z"/></svg>
+          <span class="btn-text"><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE VS PRO -->
+  <section class="band-off">
+    <div class="inner">
+      <h2 style="text-align:center;">Free is a complete coaching kit</h2>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <p class="tier-tag">Everything a new coach needs for a real season</p>
+          <ul>
+            <li>Every squad management feature, unlimited players and fixtures</li>
+            <li>The full curated library: 100+ drills with original diagrams</li>
+            <li>A ready-made season pathway and playing philosophy</li>
+            <li>Live match recording, with the supporter live view</li>
+            <li>10 AI generations a month to experience the assistant coach</li>
+          </ul>
+        </div>
+        <div class="tier pro">
+          <h3>Pro</h3>
+          <p class="tier-tag">Makes it personal</p>
+          <ul>
+            <li>Unlimited AI planning, match talks and analysis</li>
+            <li>Your own playing philosophy in the AI's voice, not a level default</li>
+            <li>Full multi-season history</li>
+            <li>AI development tracking suggestions</li>
+            <li>The pro drill library</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tiers-note">Pro pricing is shown in the app. Club-wide licences below.</p>
+    </div>
+  </section>
+
+  <!-- FOR CLUBS -->
+  <section class="band-green" id="clubs">
+    <div class="inner">
+      <h2>For clubs: every coach equipped, your methodology retained</h2>
+      <p class="lead">Club licences include the Training Console: the shared drill library, club-wide training plan rollouts and the IP retention story above, for every coach at your club under one arrangement.</p>
+      <p class="price-anchor">From $199 per year for a 10 coach club</p>
+      <p class="price-sub">Scaling with your number of coaches. Around $20 to $25 a coach, instead of $30 going it alone.</p>
+      <div class="clubs-cta-row">
+        <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="btn-solid">Email us about a club licence</a>
+        <a href="clubs/" class="btn-outline">Get the one-page summary for your committee</a>
+      </div>
+      <p class="email-inline">Or email <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
+    </div>
+  </section>
+
+  <!-- SUPPORTERS -->
+  <section class="supporters">
+    <div class="inner">
+      <h2>For the sideline you can't always be on</h2>
+      <p class="lead">Follow your child's matches live, see their development journey, and never miss presentation night's highlights. Free for every parent, always.</p>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-section">
-    <h2>Get in Touch</h2>
-    <p>Have a question, need support, or want to learn more? We'd love to hear from you.</p>
-    <a href="mailto:info@bworthyintelligence.com" class="email-link">info@bworthyintelligence.com</a>
+  <section class="band-off contact-section">
+    <div class="inner">
+      <h2>Get in touch</h2>
+      <p class="lead" style="margin: 0 auto;">Have a question, need support, or want to learn more? We'd love to hear from you.</p>
+      <a href="mailto:info@bworthyintelligence.com" class="email-btn">Email us</a>
+      <p class="email-inline" style="color: var(--text-muted);">Or write to <a href="mailto:info@bworthyintelligence.com" style="color: var(--green-dark);">info@bworthyintelligence.com</a></p>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="clubs/">For Clubs</a>
       <a href="mailto:info@bworthyintelligence.com">Contact</a>
     </div>
-    &copy; 2026 B.Worthy Intelligence Pty Ltd. All rights reserved.
+    &copy; 2026 B.Worthy Intelligence Pty Ltd. Built for community football clubs. All rights reserved.
   </footer>
 
 </body>
 </html>
-
-

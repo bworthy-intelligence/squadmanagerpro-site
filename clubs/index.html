@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SquadManager Pro for clubs</title>
+  <meta name="description" content="One licence, every coach equipped, and your club's coaching methodology retained when volunteers move on. From $199 per year for a 10 coach club." />
+  <link rel="icon" type="image/png" href="../images/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SquadManager Pro for clubs" />
+  <meta property="og:description" content="One licence, every coach equipped, and your club's coaching methodology retained when volunteers move on." />
+  <meta property="og:image" content="https://squadmanagerpro.bworthyintelligence.com/images/banner.png" />
+  <meta property="og:url" content="https://squadmanagerpro.bworthyintelligence.com/clubs/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:      #2E7D32;
+      --green-dark: #1B5E20;
+      --green-light:#4CAF50;
+      --white:      #ffffff;
+      --off-white:  #f5f7f5;
+      --text:       #1a1a1a;
+      --text-muted: #555;
+      --radius:     10px;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 32px; background: var(--green-dark);
+    }
+    .topbar .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .topbar .brand img { width: 32px; height: 32px; border-radius: 7px; }
+    .topbar .brand span { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .topbar a.back { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; }
+    .topbar a.back:hover { color: var(--white); }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 44px 28px 56px; }
+
+    header.doc h1 { font-size: 1.9rem; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+    header.doc p.intro { font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); }
+
+    .block { margin-top: 34px; padding: 26px 26px; background: var(--off-white); border-radius: var(--radius); border-left: 4px solid var(--green); }
+    .block h2 { font-size: 1.12rem; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+    .block p, .block li { font-size: 0.95rem; line-height: 1.7; color: var(--text); }
+    .block ul { list-style: none; margin-top: 8px; display: grid; gap: 8px; }
+    .block li { padding-left: 24px; position: relative; }
+    .block li::before { content: '✓'; position: absolute; left: 0; font-weight: 800; color: var(--green-light); }
+
+    .price-line { margin-top: 12px; font-size: 1.15rem; font-weight: 800; color: var(--green-dark); }
+    .price-note { font-size: 0.92rem; color: var(--text-muted); margin-top: 4px; }
+
+    .contact-block { margin-top: 38px; text-align: center; }
+    .contact-block a.email-btn {
+      display: inline-block; background: var(--green); color: var(--white);
+      padding: 13px 30px; border-radius: var(--radius); text-decoration: none;
+      font-weight: 700; font-size: 0.98rem;
+    }
+    .contact-block a.email-btn:hover { background: var(--green-dark); }
+    .contact-block .email-text { margin-top: 12px; font-size: 0.92rem; color: var(--text-muted); }
+    .contact-block .email-text a { color: var(--green-dark); font-weight: 600; }
+    .contact-block .site-url { margin-top: 6px; font-size: 0.88rem; color: var(--text-muted); }
+
+    .print-hint { text-align: center; margin-top: 30px; font-size: 0.82rem; color: var(--text-muted); }
+
+    footer { text-align: center; padding: 20px; font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Print: clean black-on-white one-pager that PDFs from the browser */
+    @media print {
+      .topbar, .print-hint, footer { display: none; }
+      .page { padding: 0; max-width: none; }
+      .block { background: none; border: 1px solid #ccc; border-left: 4px solid #2E7D32; break-inside: avoid; }
+      .contact-block a.email-btn { display: none; }
+      .contact-block .email-text { font-size: 1rem; }
+      body { color: #000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="../" class="brand">
+      <img src="../images/icon.png" alt="SquadManager Pro icon" />
+      <span>SquadManager Pro</span>
+    </a>
+    <a href="../" class="back">← squadmanagerpro.bworthyintelligence.com</a>
+  </div>
+
+  <div class="page">
+    <header class="doc">
+      <h1>SquadManager Pro for clubs</h1>
+      <p class="intro">One licence, every coach equipped, and your club's coaching methodology retained when volunteers move on. Built for community football clubs.</p>
+    </header>
+
+    <div class="block">
+      <h2>1. Every coach gets the full kit</h2>
+      <ul>
+        <li>AI session planning built on a proper development curriculum, tuned to each squad's age and level</li>
+        <li>100+ curated drills with step-by-step diagrams a first-time coach can teach</li>
+        <li>Pre-match talks, post-match analysis and an end-of-season presentation speech kit</li>
+        <li>Fixture import, line-ups, live match recording, and live matches parents can follow from anywhere</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>2. The club keeps its IP</h2>
+      <p>The Training Console gives your club a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad and age group. Push training plans to any squad or the whole club and standardise your methodology from grassroots up. When coaches change, the methodology stays with the club.</p>
+    </div>
+
+    <div class="block">
+      <h2>3. Simple pricing</h2>
+      <p class="price-line">From $199 per year for a 10 coach club</p>
+      <p class="price-note">Scaling with your number of coaches. Around $20 to $25 a coach, instead of $30 going it alone. Every coach, squad and supporter at the club is covered under the one arrangement.</p>
+    </div>
+
+    <div class="contact-block">
+      <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="email-btn">Email us about a club licence</a>
+      <p class="email-text">Or write to <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
+      <p class="site-url">squadmanagerpro.bworthyintelligence.com</p>
+    </div>
+
+    <p class="print-hint">Committee member? Print or save this page as a PDF and pass it on.</p>
+  </div>
+
+  <footer>&copy; 2026 B.Worthy Intelligence Pty Ltd. All rights reserved.</footer>
+
+</body>
+</html>
