@@ -1,3 +1,4 @@
 # Raw device screenshots stay local; only the -web resized copies are published
 images/screenshots/*.png
 !images/screenshots/*-web.png
+!images/screenshots/*-full.png

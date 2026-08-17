@@ -156,9 +156,16 @@
     .coach-block p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
 
     /* ── SCREENSHOTS ── */
-    .shots-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
-    @media (min-width: 900px) { .shots-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+    .shots-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 34px; max-width: 760px; margin-left: auto; margin-right: auto; }
     @media (max-width: 540px) { .shots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    a.shot-link { display: block; text-decoration: none; cursor: zoom-in; }
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.88); align-items: center; justify-content: center;
+      padding: 24px; cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
     .shot { text-align: center; }
     .shot figcaption { margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--green-dark); }
 
@@ -309,27 +316,27 @@
       <h2 style="text-align:center;">A look inside the app</h2>
       <div class="shots-grid">
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/recommend-focus-area-web.png" alt="Recommended focus areas screen analysing recent matches and training" /></div>
+          <a class="shot-link" href="images/screenshots/recommend-focus-area-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/recommend-focus-area-web.png" alt="Recommended focus areas screen analysing recent matches and training" /></div></a>
           <figcaption>It tells you what to train next</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/drill-diagram-web.png" alt="A drill page with a step-by-step pitch diagram and coaching points" /></div>
+          <a class="shot-link" href="images/screenshots/drill-diagram-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/drill-diagram-web.png" alt="A drill page with a step-by-step pitch diagram and coaching points" /></div></a>
           <figcaption>Drills a parent can teach</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/pathway-web.png" alt="A squad development pathway with topics progressing through stages" /></div>
+          <a class="shot-link" href="images/screenshots/pathway-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/pathway-web.png" alt="A squad development pathway with topics progressing through stages" /></div></a>
           <figcaption>Know what to teach all season</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/live-match-web.png" alt="Live match recording with events synced to the match clock" /></div>
+          <a class="shot-link" href="images/screenshots/live-match-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/live-match-web.png" alt="Live match recording with events synced to the match clock" /></div></a>
           <figcaption>Record the match as it happens</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/season-review-web.png" alt="The season review story ready to read at presentation night" /></div>
+          <a class="shot-link" href="images/screenshots/season-review-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/season-review-web.png" alt="The season review story ready to read at presentation night" /></div></a>
           <figcaption>Presentation night, written for you</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot-frame"><img loading="lazy" src="images/screenshots/checklist-web.png" alt="The coach dashboard with the guided setup checklist" /></div>
+          <a class="shot-link" href="images/screenshots/checklist-full.png"><div class="shot-frame"><img loading="lazy" src="images/screenshots/checklist-web.png" alt="The coach dashboard with the guided setup checklist" /></div></a>
           <figcaption>From download to first session, guided</figcaption>
         </figure>
       </div>
@@ -340,7 +347,7 @@
   <section>
     <div class="inner">
       <h2>Free gets you coaching. Pro makes it yours.</h2>
-      <p class="lead">Everything above is the free app: full squad management, the curated drill library, your starter pathway and philosophy, live matches, and 10 free AI generations to experience your assistant coach properly. Pro takes the ceiling off: the AI speaks in your squad's own voice, remembers every season you've coached, and is there every single week, not just when you've saved up a generation for it.</p>
+      <p class="lead">Everything above is the free app: full squad management, the curated drill library, your starter pathway and philosophy, and a chance to try out live matches and the AI assistant. Pro is what it feels like when the assistant coach is simply there, every week: planning every session, prepping every match and remembering every season.</p>
       <div class="tiers">
         <div class="tier">
           <h3>Free</h3>
@@ -357,11 +364,11 @@
           <h3>Pro</h3>
           <p class="tier-tag">The same app, tuned to your squad</p>
           <ul>
-            <li>As many plans, match talks and analyses as your season calls for</li>
-            <li>Your own playing philosophy driving every plan and talk, not a level default</li>
-            <li>Full multi-season history for every player</li>
-            <li>Development tracking suggestions after every session</li>
-            <li>Premium drill packs</li>
+            <li>Plan every session and prep every match, all season long: as much as your season calls for</li>
+            <li>Customise your own playing philosophy to drive your squad's development, rather than coaching to a default</li>
+            <li>Full multi-season match stats history</li>
+            <li>A pathway that updates itself: the AI reads your session and match notes and suggests each topic's progress</li>
+            <li>Premium drill packs to deepen your library</li>
           </ul>
         </div>
       </div>
@@ -376,7 +383,7 @@
       <h2>For club administrators and technical directors</h2>
       <p class="body">Your club's coaching philosophy, methodology and development pathways should be assets the club owns, not knowledge that walks out the door when a coach moves on. The Training Console gives your club a central command centre: a shared drill library, a structured training plan repository, and visibility across every squad and age group. Push training plans to any squad or the whole club, standardise your methodology from MiniRoos up, and when coaches change, your IP stays.</p>
       <p class="price-anchor">Club licences from $199 per year for a 10 coach club</p>
-      <p class="price-sub">Scaling with your number of coaches, and including a club administrator or technical director licence alongside the coach seats. Around $20 to $25 a coach, instead of $30 going it alone.</p>
+      <p class="price-sub">Scaling with your number of coaches, and including a club administrator or technical director licence alongside the coach seats, and a generous allocation of supporter licences. Around $20 to $25 a coach, instead of $30 going it alone.</p>
       <p class="body" style="margin-top: 18px;">Licences are assigned centrally, so each coach opens the app to find their squad, their pathway and the club's methodology already waiting, no setup required of them.</p>
       <div class="clubs-cta-row">
         <a href="mailto:info@bworthyintelligence.com?subject=Club%20licence%20enquiry" class="btn-solid">Email us about a club licence</a>
@@ -432,5 +439,21 @@
     &copy; 2026 B.Worthy Intelligence Pty Ltd. Built for community football clubs. All rights reserved.
   </footer>
 
+<div id="lightbox"><img id="lightbox-img" src="" alt="App screenshot enlarged" /></div>
+<script>
+  (function () {
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    document.querySelectorAll('a.shot-link').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        box.classList.add('open');
+      });
+    });
+    box.addEventListener('click', function () { box.classList.remove('open'); img.src = ''; });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { box.classList.remove('open'); img.src = ''; } });
+  })();
+</script>
 </body>
 </html>
