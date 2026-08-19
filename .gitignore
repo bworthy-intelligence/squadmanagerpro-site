@@ -3,3 +3,4 @@ images/screenshots/*.png
 !images/screenshots/*-web.png
 !images/screenshots/*-full.png
 video-raw/
+store-assets/
