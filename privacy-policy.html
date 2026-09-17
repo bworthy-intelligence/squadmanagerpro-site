@@ -3,137 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — SquadManager Pro</title>
+  <title>Privacy Policy | SquadManager Pro</title>
   <link rel="icon" type="image/png" href="images/icon.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --green:      #2E7D32;
-      --green-dark: #1B5E20;
-      --white:      #ffffff;
-      --off-white:  #f5f7f5;
-      --text:       #1a1a1a;
-      --text-muted: #555;
-      --radius:     10px;
+      --green: #2E7D32; --green-dark: #1B5E20; --white: #ffffff; --off-white: #f5f7f5;
+      --text: #1a1a1a; --text-muted: #555; --radius: 10px;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--white);
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 32px;
-      background: var(--green-dark);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-    .nav-brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-    }
-    .nav-brand span {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.3px;
-    }
-    nav a.nav-link {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--white); }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: var(--green-dark); box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-brand img { width: 38px; height: 38px; border-radius: 8px; }
+    .nav-brand span { font-size: 1.1rem; font-weight: 700; color: var(--white); letter-spacing: 0.3px; }
+    nav a.nav-link { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem; font-weight: 500; margin-left: 18px; }
     nav a.nav-link:hover { color: var(--white); }
-
-    /* ── PAGE HEADER ── */
-    .page-header {
-      background: var(--green);
-      padding: 48px 32px 40px;
-      text-align: center;
-    }
-    .page-header h1 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: var(--white);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .page-header p {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.95rem;
-    }
-
-    /* ── CONTENT ── */
-    .policy-content {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 56px 32px 72px;
-    }
-    .policy-content h2 {
-      font-size: 1.2rem;
-      color: var(--green-dark);
-      font-weight: 700;
-      margin: 36px 0 12px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--off-white);
-    }
-    .policy-content p {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-    .policy-content ul {
-      margin: 8px 0 14px 24px;
-    }
-    .policy-content ul li {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .policy-content a {
-      color: var(--green);
-      text-decoration: underline;
-    }
-    .contact-block {
-      background: var(--off-white);
-      border-left: 4px solid var(--green);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-top: 16px;
-    }
+    .page-header { background: var(--green); padding: 48px 32px 40px; text-align: center; }
+    .page-header h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); font-weight: 800; margin-bottom: 8px; }
+    .page-header p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+    .policy-content { max-width: 780px; margin: 0 auto; padding: 56px 32px 72px; }
+    .policy-content h2 { font-size: 1.2rem; color: var(--green-dark); font-weight: 700; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--off-white); }
+    .policy-content h3 { font-size: 1.02rem; color: var(--green-dark); font-weight: 700; margin: 22px 0 8px; }
+    .policy-content p, .policy-content li { font-size: 1rem; line-height: 1.75; color: var(--text); }
+    .policy-content p { margin-bottom: 14px; }
+    .policy-content ul { margin: 8px 0 14px 24px; }
+    .policy-content li { margin-bottom: 6px; }
+    .policy-content a { color: var(--green); text-decoration: underline; }
+    .summary { background: var(--off-white); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 18px 22px; margin: 16px 0 8px; }
+    .summary ul { margin-bottom: 0; }
+    .table-wrap { overflow-x: auto; margin: 8px 0 16px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e3e7e3; vertical-align: top; line-height: 1.5; }
+    th { background: var(--off-white); color: var(--green-dark); font-weight: 700; }
+    .contact-block { background: var(--off-white); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 20px 24px; margin-top: 16px; }
     .contact-block p { margin-bottom: 4px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--green-dark);
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 24px 32px;
-      font-size: 0.85rem;
-    }
+    footer { background: var(--green-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px 32px; font-size: 0.85rem; }
     footer a { color: rgba(255,255,255,0.85); text-decoration: underline; }
-    footer a:hover { color: var(--white); }
     footer .footer-links { margin-bottom: 8px; }
     footer .footer-links a { margin: 0 12px; }
-
     @media (max-width: 600px) {
       nav { padding: 12px 16px; }
       .page-header { padding: 32px 16px 28px; }
@@ -143,101 +50,143 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="images/icon.png" alt="SquadManager Pro icon" />
       <span>SquadManager Pro</span>
     </a>
-    <a href="index.html" class="nav-link">Home</a>
+    <div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="terms-of-service.html" class="nav-link">Terms</a>
+    </div>
   </nav>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <h1>Privacy Policy</h1>
-    <p>B.Worthy Intelligence Pty Ltd &mdash; SquadManager Pro</p>
+    <p>B.Worthy Intelligence Pty Ltd (ABN 46 695 838 254). Last updated 18 September 2026.</p>
   </div>
 
-  <!-- CONTENT -->
   <div class="policy-content">
 
-    <p>B.Worthy Intelligence Pty Ltd is committed to providing quality services to you and this policy outlines our ongoing obligations to you in respect of how we manage your Personal Information.</p>
+    <p>SquadManager Pro is made by B.Worthy Intelligence Pty Ltd, based in Northcote, Victoria, Australia. This policy explains what information the app and website collect, why, who else sees it, how long we keep it, and what you can do about it. We have written it to follow the Australian Privacy Principles in the Privacy Act 1988, and we hold ourselves to it whether or not the Act strictly applies to a business of our size.</p>
+    <p>If anything here is unclear, email us at <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a>.</p>
 
-    <p>We have adopted the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth) (the Privacy Act). The APPs govern the way in which we collect, use, disclose, store, secure and dispose of your Personal Information.</p>
+    <h2>The short version</h2>
+    <div class="summary">
+      <ul>
+        <li>Coaches use the app to run a team: players, sessions, matches, notes and ratings. Most players are children. <strong>The coach enters the players' details, not the players or their families.</strong></li>
+        <li>We use the information only to run the app for you. We do not sell it, share it for advertising, or show ads.</li>
+        <li>Our servers are hosted by Supabase in Singapore, and a nightly backup copy is kept for 30 days on GitHub in the United States.</li>
+        <li>Some features use an AI model provided by Anthropic in the United States. <strong>Player names are replaced with made-up names before anything is sent, and put back afterwards</strong>, so no real player name reaches Anthropic. Anthropic does not train on this data and deletes it after 30 days.</li>
+        <li>You can see and change your own details in the app and delete your account at any time. A parent can ask their coach, or us, to see, correct or delete what is held about their child.</li>
+      </ul>
+    </div>
 
-    <p>A copy of the Australian Privacy Principles may be obtained from the website of The Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au/" target="_blank" rel="noopener">www.oaic.gov.au</a>.</p>
+    <h2>Who this policy covers</h2>
+    <p><strong>Coaches and club admins</strong> who sign up to run squads and clubs. <strong>Supporters</strong>, usually parents and carers, who sign up to follow a squad. <strong>Players</strong>, the members of a squad, who are usually under 18 and are added by their coach. <strong>People who are invited</strong> by email to join a squad or club.</p>
 
-    <h2>What is Personal Information and why do we collect it?</h2>
+    <h2>What we collect</h2>
 
-    <p>Personal Information is information or an opinion that identifies an individual. Examples of Personal Information we collect include names, addresses, email addresses, phone and facsimile numbers.</p>
-
-    <p>This Personal Information is obtained in many ways including email, photos (uploaded or through camera) and player information supplied to the app and from third parties. We don't guarantee website links or the policies of authorised third parties.</p>
-
-    <p>We collect your Personal Information for the primary purpose of providing our services to you, providing information to our clients and marketing. We may also use your Personal Information for secondary purposes closely related to the primary purpose, in circumstances where you would reasonably expect such use or disclosure. You may unsubscribe from our mailing/marketing lists at any time by contacting us in writing.</p>
-
-    <p>When we collect Personal Information we will, where appropriate and where possible, explain to you why we are collecting the information and how we plan to use it.</p>
-
-    <h2>Sensitive Information</h2>
-
-    <p>Sensitive information is defined in the Privacy Act to include information or opinion about such things as an individual's racial or ethnic origin, political opinions, membership of a political association, religious or philosophical beliefs, membership of a trade union or other professional body, criminal record or health information.</p>
-
-    <p>Sensitive information will be used by us only:</p>
+    <h3>About you, if you are a coach, club admin or supporter</h3>
     <ul>
-      <li>For the primary purpose for which it was obtained</li>
-      <li>For a secondary purpose that is directly related to the primary purpose</li>
-      <li>With your consent; or where required or authorised by law</li>
+      <li>Your name and email address, from your sign-up.</li>
+      <li>A profile photo, if you add one.</li>
+      <li>Your role and which squads and clubs you belong to.</li>
+      <li>A device token so we can send you notifications, if you allow them, and your notification preferences.</li>
+      <li>Your subscription status (which plan, until when). <strong>We never see your card details</strong>; payments go through Apple or Google.</li>
+      <li>Anything you write in the app: notes, comments, reactions, feedback, and reports of content you think is inappropriate.</li>
+      <li>How you use the app: which screens you open and which features you use, with counts and timings. This is stored by us, not by an advertising or analytics company, and it never includes what you typed or any player's name.</li>
     </ul>
 
-    <h2>Third Parties</h2>
-
-    <p>Where reasonable and practicable to do so, we will collect your Personal Information only from you. However, in some circumstances we may be provided with information by third parties. In such a case we will take reasonable steps to ensure that you are made aware of the information provided to us by the third party.</p>
-
-    <h2>Disclosure of Personal Information</h2>
-
-    <p>Your Personal Information may be disclosed in a number of circumstances including the following:</p>
+    <h3>About players</h3>
+    <p>The coach adds these. We hold no date of birth; a player's age is only known through the squad's age group.</p>
     <ul>
-      <li>Third parties where you consent to the use or disclosure; and</li>
-      <li>Where required or authorised by law.</li>
+      <li>First and last name, and a photo if the coach adds one.</li>
+      <li>Shirt number, preferred positions, and whether the player is active or archived.</li>
+      <li>Attendance at training and matches, and match statistics such as minutes played, position, goals, assists, substitutions and cards.</li>
+      <li>The coach's ratings of the player: skill ratings, a rating for each match, and general ratings of attitude and aptitude. These are the coach's opinion.</li>
+      <li>The coach's notes about the player, and squad notes that mention the player.</li>
+      <li>Text written by the AI features about the player, such as a match report or an end-of-season paragraph, if the coach chooses to save it.</li>
+    </ul>
+    <p><strong>About players' health or family circumstances.</strong> Notes fields are free text, and a coach could write something about a player's health or home life. We ask coaches not to, except where it is needed for the player's safety, and the app reminds them. If such information is recorded, we treat it as sensitive information: it is visible only to the squad's coaches and the club's admins, it is never used for anything but running the squad, and we delete it on request.</p>
+
+    <h3>About clubs</h3>
+    <p>Club names, training plans, coaching methodology and similar material. This is not personal information, except where a plan or note names someone.</p>
+
+    <h2>Children</h2>
+    <p>Most players are children, and their information is entered by an adult who coaches them. This is how we handle that:</p>
+    <ul>
+      <li><strong>The coach and the club are responsible for making sure a player's parent or guardian knows the player is recorded in the app</strong>, and for having their agreement. Our terms require this, and the easiest way to do it is to invite the parent as a supporter, which also lets them see what is recorded.</li>
+      <li><strong>Ratings are private by default.</strong> For new squads, skill ratings and performance analytics are visible to coaches only unless the coach changes the setting. Players and supporters never see a ranking of children.</li>
+      <li><strong>A supporter can hide ratings from their own view</strong> of a player at any time.</li>
+      <li><strong>A parent or guardian can ask to see, correct or delete what is held about their child</strong>, either through the coach or by emailing us. We will act on a request from a parent or guardian without needing the coach's agreement.</li>
+      <li>We do not knowingly let anyone under 18 create an account. Players do not have accounts; they are records in their coach's squad.</li>
     </ul>
 
-    <h2>Security of Personal Information</h2>
+    <h2>How we use the information</h2>
+    <p>To run the app: showing squads, sessions, matches and stats to the people entitled to see them; sending invitations, reminders and notifications you have chosen; generating AI coaching content on the coach's request; managing subscriptions and club licences; keeping the app working and secure; answering your messages; and improving the app based on how it is used. Nothing else.</p>
 
-    <p>Your Personal Information is stored in a manner that reasonably protects it from misuse and loss and from unauthorised access, modification or disclosure.</p>
+    <h2>AI features</h2>
+    <p>The session planner, session focus, match talk, match report and analysis, and season review send information about a squad to an AI model run by Anthropic in the United States. What is sent: the squad's name, age group and gender; the opponent, score and match events; ratings; and the coach's notes. <strong>Before anything is sent, every player's real name is replaced by a made-up name, consistently, and the real names are put back in the result.</strong> No real player name reaches Anthropic.</p>
+    <p>Anthropic processes this under its commercial terms, which prohibit it from training on customer content, and deletes it after 30 days. The coach sees the AI's output and decides whether to keep it; the app does not save AI text about a player without the coach saving it. AI output is a starting point for the coach's judgement, not a record of fact.</p>
 
-    <p>When your Personal Information is no longer needed for the purpose for which it was obtained, we will take reasonable steps to destroy or permanently de-identify your Personal Information. However, most of the Personal Information is or will be stored in client files which will be kept by us for a minimum of 7 years.</p>
+    <h2>Who else sees the information</h2>
+    <p>We use a small number of service providers to run the app. Each gets only what it needs for its job, under contract terms that restrict it to that job. Some are outside Australia; where they are, we say so.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Provider</th><th>Where</th><th>What they hold</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Singapore</td><td>Everything in the app: the database, files and sign-in</td><td>Hosting</td></tr>
+          <tr><td>GitHub</td><td>United States</td><td>A nightly backup copy of the database, kept 30 days</td><td>Backups</td></tr>
+          <tr><td>Anthropic</td><td>United States</td><td>Squad information for AI features, with player names replaced</td><td>AI features</td></tr>
+          <tr><td>Resend</td><td>United States</td><td>Email addresses and the content of emails we send you</td><td>Sending email</td></tr>
+          <tr><td>Expo</td><td>United States</td><td>Notification device tokens and the text of notifications</td><td>Push notifications and app updates</td></tr>
+          <tr><td>Apple and Google</td><td>Various</td><td>Your purchase and subscription</td><td>Payments and the app stores</td></tr>
+          <tr><td>RevenueCat</td><td>United States</td><td>An anonymous account identifier and subscription status</td><td>Subscription management</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We also receive, at info@bworthyintelligence.com, a notification when someone signs up, submits feedback or reports content, so we can respond. We do not sell personal information, share it with advertisers, or use third-party advertising or analytics tools. We would disclose information if the law required it.</p>
 
-    <h2>Access to your Personal Information</h2>
+    <h2>Where it is kept and how it is protected</h2>
+    <p>The database and files are held by Supabase in Singapore. Access is controlled row by row: coaches see their squads, supporters see the squad they have been approved into, club admins see the squads confirmed into their club. Photos are served through expiring private links, not public web addresses. The app itself holds no privileged credentials. We monitor the service and are alerted to failures automatically.</p>
 
-    <p>You may access the Personal Information we hold about you and to update and/or correct it, subject to certain exceptions. If you wish to access your Personal Information, please contact us in writing.</p>
+    <h2>How long we keep it</h2>
+    <ul>
+      <li><strong>Your account:</strong> until you delete it. When you delete your account, your profile, memberships, invitations and device tokens are removed. Squads, matches, sessions and notes you created stay with the squad, because they belong to the team and its other coaches, with your name removed as author.</li>
+      <li><strong>Players:</strong> until the coach deletes the player or the squad. A deleted squad is hidden immediately and permanently removed 12 months later.</li>
+      <li><strong>Usage analytics and notification logs:</strong> 12 months. <strong>Technical incident reports:</strong> 90 days.</li>
+      <li><strong>Backups:</strong> 30 days, then deleted automatically.</li>
+      <li><strong>AI processing at Anthropic:</strong> 30 days.</li>
+    </ul>
 
-    <p>B.Worthy Intelligence Pty Ltd will not charge any fee for your access request, but may charge an administrative fee for providing a copy of your Personal Information.</p>
+    <h2>Your choices</h2>
+    <ul>
+      <li><strong>See and correct</strong> your details in the app. Coaches can correct or delete any player record in their squad.</li>
+      <li><strong>Export.</strong> A squad's data will be downloadable from the app as spreadsheets; until then, email us and we will provide it.</li>
+      <li><strong>Delete your account</strong> from the app's menu at any time.</li>
+      <li><strong>Notifications:</strong> turn categories off in Settings or at the device level.</li>
+      <li><strong>Ratings:</strong> supporters can hide a player's ratings from their own view.</li>
+      <li><strong>Parents and guardians:</strong> ask the coach, or email us, to see, correct or delete your child's information.</li>
+      <li><strong>Complaints:</strong> email info@bworthyintelligence.com and we will respond within 30 days. If you are not satisfied, you can contact the Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au/" target="_blank" rel="noopener">oaic.gov.au</a>.</li>
+    </ul>
 
-    <p>In order to protect your Personal Information we may require identification from you before releasing the requested information.</p>
+    <h2>Changes to this policy</h2>
+    <p>When the app starts holding new kinds of information or sharing it with a new provider, we update this policy first and change the date at the top. For significant changes we will tell you in the app.</p>
 
-    <h2>Maintaining the Quality of your Personal Information</h2>
-
-    <p>It is important to us that your Personal Information is up to date. We will take reasonable steps to make sure that your Personal Information is accurate, complete and up-to-date. If you find that the information we have is not up to date or is inaccurate, please advise us as soon as practicable so we can update our records and ensure we can continue to provide quality services to you.</p>
-
-    <h2>Policy Updates</h2>
-
-    <p>This Policy may change from time to time and is available on our website.</p>
-
-    <h2>Privacy Policy Complaints and Enquiries</h2>
-
-    <p>If you have any queries or complaints about our Privacy Policy please contact us at:</p>
-
+    <h2>Contact</h2>
     <div class="contact-block">
-      <p><strong>B.Worthy Intelligence Pty Ltd</strong></p>
+      <p><strong>B.Worthy Intelligence Pty Ltd</strong> (ABN 46 695 838 254)</p>
       <p>8 Wastell St, Northcote, VIC, 3070, Australia</p>
       <p><a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
+      <a href="terms-of-service.html">Terms of Service</a>
       <a href="mailto:info@bworthyintelligence.com">Contact</a>
     </div>
     &copy; 2026 B.Worthy Intelligence Pty Ltd. All rights reserved.
