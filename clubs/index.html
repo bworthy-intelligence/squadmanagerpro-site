@@ -56,6 +56,13 @@
 
     .price-line { margin-top: 12px; font-size: 1.15rem; font-weight: 800; color: var(--green-dark); }
     .price-note { font-size: 0.92rem; color: var(--text-muted); margin-top: 4px; }
+    .price-table { width: 100%; max-width: 420px; border-collapse: collapse; margin: 14px 0 10px; font-size: 0.95rem; }
+    .price-table th, .price-table td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #d9ded9; }
+    .price-table th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); font-weight: 700; }
+    .price-table td:last-child, .price-table th:last-child { text-align: right; white-space: nowrap; }
+    .price-lines { list-style: none; margin-top: 8px; display: grid; gap: 6px; }
+    .price-lines li { padding-left: 0; font-size: 0.95rem; line-height: 1.6; }
+    .price-lines li::before { content: none; }
 
     .contact-block { margin-top: 38px; text-align: center; }
     .contact-block a.email-btn {
@@ -125,8 +132,20 @@
 
     <div class="block">
       <h2>3. Simple pricing</h2>
-      <p class="price-line">From $24.99 per squad per year</p>
-      <p class="price-note">Every squad licence includes two coach seats, one for the coach and one for an assistant. The price per squad depends on how many squads the club licenses: $29.99 a year for clubs with fewer than 10 squads, $27.99 for 10 to 19, $24.99 for 20 or more. So a club with 20 squads pays $24.99 a squad, or $12.50 a coach where both seats are used, instead of $29.99 a coach going it alone. Add families for 30 per cent of the squad price, which gives every squad up to 30 supporter seats. Club administrator and technical director seats are $49.99 a year each.</p>
+      <p class="price-line">One squad licence a year per squad, two coach seats included</p>
+      <table class="price-table">
+        <thead><tr><th>Squads licensed</th><th>Per squad, per year</th></tr></thead>
+        <tbody>
+          <tr><td>Fewer than 10</td><td>$29.99</td></tr>
+          <tr><td>10 to 19</td><td>$27.99</td></tr>
+          <tr><td>20 or more</td><td>$24.99</td></tr>
+        </tbody>
+      </table>
+      <ul class="price-lines">
+        <li>Two coach seats per squad, for the coach and an assistant: at 20 squads that is $12.50 a coach, against $29.99 going it alone.</li>
+        <li>Families: add 30 per cent of the squad price for up to 30 supporter seats per squad.</li>
+        <li>Club administrator or technical director seat: $49.99 a year.</li>
+      </ul>
     </div>
 
     <div class="contact-block">
