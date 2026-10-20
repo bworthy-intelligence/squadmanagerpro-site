@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>People and checks | SquadManager Pro Guide</title>
+<link rel="icon" type="image/png" href="../images/icon.png" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --green: #2E7D32; --green-dark: #1B5E20; --off-white: #f5f7f5; --line: #e3e7e3; --text: #1a1a1a; --muted: #555; --radius: 10px; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #fff; }
+nav.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; background: var(--green-dark); }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 700; }
+.brand img { width: 32px; height: 32px; border-radius: 7px; }
+nav.top a.link { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.92rem; }
+.wrap { display: grid; grid-template-columns: 260px minmax(0, 1fr); max-width: 1100px; margin: 0 auto; }
+aside { border-right: 1px solid var(--line); padding: 24px 16px; font-size: 0.92rem; }
+aside h4 { color: var(--green-dark); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; margin: 18px 0 6px; }
+aside h4:first-child { margin-top: 0; }
+aside h5 { color: var(--muted); font-size: 0.78rem; font-weight: 600; margin: 10px 8px 2px; }
+aside a { display: block; color: var(--text); text-decoration: none; padding: 4px 8px; border-radius: 6px; line-height: 1.35; }
+aside a:hover { background: var(--off-white); }
+aside a.here { background: var(--off-white); color: var(--green-dark); font-weight: 600; }
+main { padding: 32px 40px 64px; max-width: 780px; }
+main h1 { font-size: 1.7rem; color: var(--green-dark); margin-bottom: 6px; }
+.updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+main h2 { font-size: 1.15rem; color: var(--green-dark); margin: 28px 0 10px; }
+main h3 { font-size: 1rem; color: var(--green-dark); margin: 20px 0 8px; }
+main p, main li { font-size: 1rem; line-height: 1.7; }
+main p { margin-bottom: 12px; }
+main ul, main ol { margin: 6px 0 14px 24px; }
+main li { margin-bottom: 6px; }
+main li ul { margin-top: 6px; margin-bottom: 4px; }
+main a { color: var(--green); }
+.label { background: var(--off-white); border: 1px solid var(--line); border-radius: 5px; padding: 0 5px; font-weight: 600; white-space: nowrap; }
+.note { background: var(--off-white); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 12px 16px; margin: 14px 0; line-height: 1.6; }
+figure.shot { margin: 16px 0 20px; }
+figure.shot img { max-width: 100%; border: 1px solid var(--line); border-radius: var(--radius); display: block; }
+figure.shot.phone img { max-width: 300px; }
+figure.shot figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
+figure.placeholder div { border: 2px dashed #b9c4b9; border-radius: var(--radius); padding: 18px; color: var(--muted); font-size: 0.92rem; background: #fafcfa; }
+.table-wrap { overflow-x: auto; margin: 10px 0 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+th { background: var(--off-white); color: var(--green-dark); }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.92rem; }
+.pager a { color: var(--green); text-decoration: none; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); align-items: start; gap: 14px; margin: 16px 0 28px; }
+.card { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.card h3 { margin: 0 0 6px; }
+.card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 8px; }
+.card h4 { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; margin: 12px 0 4px; }
+.card ul { margin: 0 0 0 18px; font-size: 0.92rem; }
+.card li { margin-bottom: 3px; line-height: 1.45; }
+footer { background: var(--green-dark); color: rgba(255,255,255,0.75); text-align: center; padding: 20px; font-size: 0.85rem; }
+footer a { color: rgba(255,255,255,0.9); }
+@media (max-width: 760px) {
+  .wrap { display: block; }
+  aside { border-right: none; border-bottom: 1px solid var(--line); padding: 12px 16px; }
+  aside details > summary { cursor: pointer; font-weight: 600; color: var(--green-dark); }
+  main { padding: 24px 16px 48px; }
+  nav.top { padding: 10px 16px; }
+}
+@media (min-width: 761px) { aside details > summary { display: none; } }
+@media print {
+  nav.top, aside, .pager, footer, .no-print { display: none !important; }
+  .wrap { display: block; } main { max-width: none; padding: 0; }
+  .print-page { break-before: page; } .print-page:first-of-type { break-before: auto; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="index.html"><img src="../images/icon.png" alt="" /><span>SquadManager Pro Guide</span></a><a class="link" href="../app/">Open the desktop app</a></nav>
+<div class="wrap">
+<aside><details id="pages"><summary>All pages</summary><a href="index.html">Contents</a><h4>Getting started</h4><a href="get-a-login.html">Get a login</a><a href="join-your-squad.html">Join your squad</a><a href="phone-and-desktop.html">Phone and computer</a><a href="free-and-paid.html">Subscriptions and Club Licences</a><h4>For coaches</h4><h5>Start here</h5><a href="a-typical-week.html">A typical week in the app</a><a href="finding-your-way.html">Finding your way</a><h5>Getting set up</h5><a href="add-players.html">Add your players</a><a href="schedule-sessions.html">Schedule your sessions</a><a href="add-fixtures.html">Add your fixtures</a><a href="development-plan.html">Development plan</a><a href="squad-theory.html">Playing philosophy and squad theory</a><a href="invite-coach.html">Invite another coach</a><a href="invite-parents.html">Invite parents as supporters</a><a href="checks.html">Checks and qualifications</a><a href="notifications.html">Notifications</a><h5>Training</h5><a href="session-plan.html">Your session plan</a><a href="build-a-session.html">Build a session yourself</a><a href="ai-session-planner.html">AI Session Planner</a><a href="drill-library.html">Find drills</a><a href="share-the-plan.html">Share the plan (optional)</a><a href="attendance.html">Attendance</a><a href="mark-as-run.html">Mark a session as run</a><a href="training-reflection.html">Training reflection</a><h5>Matches</h5><a href="match-day.html">Match day</a><a href="sub-planner.html">Plan rotations</a><a href="live-match.html">Live match</a><a href="ai-match-prep.html">AI Match Prep</a><a href="after-the-game.html">After the game: goals and the score</a><a href="ai-match-analysis.html">AI Match Analysis and match reports</a><a href="match-reflection.html">Match reflection</a><a href="import-match.html">Import a match</a><h5>Going further</h5><a href="more-features.html">When you're ready for more</a><a href="stats.html">Stats</a><a href="season-review.html">Season review</a><a href="new-season.html">Start a new season</a><a href="who-sees-what.html">Who sees what</a><h4>For club admins</h4><h5>Your club</h5><a href="training-console.html">The club area and Training Console</a><a href="club-squads.html">Your club's squads</a><a href="coach-seats.html">Coaches and seats</a><a href="people-and-checks.html" class="here">People and checks</a><h5>Drills and plans</h5><a href="club-drills.html">Create a drill</a><a href="diagram-editor.html">Draw a drill diagram</a><a href="club-plans.html">Create a club plan</a><a href="schedule-plans.html">Schedule plans onto sessions</a><a href="see-how-its-going.html">See how it's going</a><a href="club-theory.html">Club theory and position profiles</a><h5>Admin</h5><a href="licensing.html">Licensing</a><a href="club-admins.html">Club admins</a><a href="season.html">The club season</a><a href="squad-defaults.html">Squad defaults</a><a href="club-readiness.html">Club readiness report</a><h4>For parents</h4><a href="for-parents.html">Following your child's squad</a><h4>Help</h4><a href="help.html">Getting help</a><h4>Print</h4><a href="print.html">Whole guide, for printing or PDF</a></details></aside>
+<main>
+<h1>People and checks</h1><div class="updated">Last updated 20 October 2026</div>
+<p>The club area's <span class="label">People</span> tab lists every coach and admin: their roles, seat, squads, Working with Children Check and qualifications.</p>
+<h2>Verifying a Working with Children Check</h2>
+<p>Coaches enter their own (see <a href="checks.html">Your Working with Children Check</a>).  To verify one:</p>
+<ol><li>Tap the person's &quot;WWCC&quot; line.</li><li>Check the number on the state register.</li><li>Turn on <span class="label">Verified</span> and <span class="label">Save</span>.</li></ol>
+<p>Changing the scheme, number or expiry clears the tick.  You can also enter a check for a coach yourself.  Only numbers and dates are stored, never card images.</p>
+<p>Coaching qualifications work the same way: tap the &quot;Qualifications&quot; line, and tick <span class="label">Verified</span> after checking with Football Australia.</p>
+<figure class="shot"><img src="images/people.png" alt="The People tab with WWCC and qualification lines, and the Working with Children Check sheet" loading="lazy" /><figcaption>The People tab with WWCC and qualification lines, and the Working with Children Check sheet</figcaption></figure>
+<p>The <span class="label">Overview</span> tab flags expired checks and seats with no check recorded.</p>
+<div class="pager"><span><a href="coach-seats.html">← Coaches and seats</a></span><span><a href="club-drills.html">Create a drill →</a></span></div>
+</main>
+</div>
+<footer>SquadManager Pro, by B.Worthy Intelligence. Questions: <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a> · <a href="../privacy-policy.html">Privacy</a> · <a href="../terms-of-service.html">Terms</a></footer>
+<script>/* The page list starts open on a wide screen, closed on a phone. */ if (window.matchMedia('(min-width: 761px)').matches) document.getElementById('pages').open = true;</script>
+</body>
+</html>
