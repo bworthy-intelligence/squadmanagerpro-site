@@ -135,6 +135,11 @@
     .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--white); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
     .hero p.sub { font-size: clamp(1rem, 2vw, 1.18rem); color: rgba(255,255,255,0.92); line-height: 1.7; margin-bottom: 28px; }
     .hero .free-note { margin-top: 14px; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+    .web-note { margin-top: 12px; font-size: 0.92rem; }
+    .hero .web-note { color: rgba(255,255,255,0.85); }
+    .hero .web-note a { color: #fff; font-weight: 600; }
+    .web-note.centered { text-align: center; color: var(--text-muted); }
+    .web-note.centered a { color: var(--green); font-weight: 600; }
     .hero .shot-frame { max-width: 250px; margin: 0 auto; border-color: rgba(255,255,255,0.85); box-shadow: 0 14px 34px rgba(0,0,0,0.35); }
     @media (max-width: 760px) {
       .hero .inner { grid-template-columns: 1fr; gap: 32px; }
@@ -243,6 +248,7 @@
       <a href="#download" class="nav-link">Download</a>
       <a href="#clubs" class="nav-link">For Clubs</a>
       <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+      <a href="app/" class="nav-link">Sign in</a>
     </div>
   </nav>
 
@@ -262,6 +268,7 @@
             <span class="btn-text"><small>Get it on</small>Google Play</span>
           </a>
         </div>
+        <p class="web-note">Or use it on your computer at <a href="app/">squadmanagerpro.bworthyintelligence.com/app</a></p>
         <p class="free-note">Free to start. Set up your squad in minutes.</p>
       </div>
       <div class="shot-frame">
@@ -433,6 +440,7 @@
           <span class="btn-text"><small>Get it on</small>Google Play</span>
         </a>
       </div>
+      <p class="web-note centered">Or use it on your computer at <a href="app/">squadmanagerpro.bworthyintelligence.com/app</a></p>
     </div>
   </section>
 
